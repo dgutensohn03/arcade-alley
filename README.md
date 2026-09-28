@@ -12,6 +12,8 @@ Open `index.html` in a current desktop or mobile browser, or serve the folder wi
 - Mouse: point and click. Touch: tap where you want to fire.
 - **R** or the reload button: reload six shots. **P**: pause. **M**: sound. **C**: toggle the visible aim assist. **F**: fullscreen.
 - Complete 12 waves across four districts. Every fourth wave is a bonus round. Three strikes end the run. The best score is stored in your browser.
+- The four districts introduce the Strongman, Oligarch, Propagandist, and Algorithm. Civilians include a journalist, commuter, musician, delivery rider, tourist, and photographer. Each has distinct original pixel art.
+- Targets pop into view, idle in short pixel animation cycles, react to hits, and clear between sets. The skyline lights and title roster animate too.
 
 The aim assist starts on for the mouse. Turning it off hides the reticle until you fire, closer to the light-gun feel. A touchscreen remains direct touch targeting. The optional phone-as-a-separate-controller concept needs a paired sensor transport and calibration; this version does **not** claim that a phone's gyroscope accurately points at another display.
 
