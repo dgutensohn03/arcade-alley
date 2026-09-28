@@ -17,9 +17,9 @@ The aim assist starts on for the mouse. Turning it off hides the reticle until y
 
 ## GitHub Pages
 
-The public game URL is **https://dgutensohn03.github.io/arcade-alley/**. To turn it on for this repository, open **[Settings → Pages](https://github.com/dgutensohn03/arcade-alley/settings/pages)**, set **Source** to **Deploy from a branch**, choose **main** and **/(root)**, then save. GitHub may take a few minutes to publish the first deployment. Subsequent changes to `main` will update the site automatically.
+The public game URL is **https://dgutensohn03.github.io/arcade-alley/**. The [Pages deployment workflow](.github/workflows/deploy.yml) packages the four game files and publishes them automatically on every push to `main`. In **[Settings → Pages](https://github.com/dgutensohn03/arcade-alley/settings/pages)**, **GitHub Actions** is the recommended publishing source for this workflow. Check the **Deploy Arcade Alley** run under the **Actions** tab if a future update does not appear.
 
-The site is static, uses relative file paths, and needs no secrets, build command, or server. The `.nojekyll` file tells Pages to serve these files directly. If the game URL returns 404, check the Pages settings and the latest deployment under the repository's **Actions** tab.
+The site is static, uses relative file paths, and needs no secrets, build command, or server. The `.nojekyll` file tells Pages to serve these files directly.
 
 ## Structure
 
@@ -29,6 +29,7 @@ The site is static, uses relative file paths, and needs no secrets, build comman
 - `game.js` — canvas art, animation, scenes, input, game state, and original Web Audio chiptune
 - `tests/logic.test.js` — core gameplay rules
 - `.github/workflows/check.yml` — runs the logic tests on each push and pull request
+- `.github/workflows/deploy.yml` — publishes the game to GitHub Pages on each push to `main`
 
 Run `node --test tests/*.test.js` for logic tests. The project is intentionally dependency free.
 
