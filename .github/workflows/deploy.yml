@@ -23,8 +23,9 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Package game
         run: |
-          mkdir public
+          mkdir -p public/assets
           cp index.html styles.css logic.js game.js .nojekyll public/
+          cp assets/sprites.png assets/sprites.json public/assets/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:

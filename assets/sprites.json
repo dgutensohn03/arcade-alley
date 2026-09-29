@@ -1,0 +1,22 @@
+{
+  "frameWidth": 80,
+  "frameHeight": 96,
+  "frames": 4,
+  "origin": [
+    40,
+    64
+  ],
+  "rows": {
+    "strongman": 0,
+    "oligarch": 1,
+    "propagandist": 2,
+    "algorithm": 3,
+    "journalist": 4,
+    "commuter": 5,
+    "musician": 6,
+    "rider": 7,
+    "tourist": 8,
+    "photographer": 9,
+    "drone": 10
+  }
+}

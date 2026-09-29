@@ -1,8 +1,8 @@
 # Arcade Alley
 
-An original 8-bit shooting gallery inspired by the quick identification rhythm of classic NES light-gun games. The characters, scenes, art, and music are original. No assets or build tools are required.
+An original 8-bit shooting gallery inspired by the quick identification rhythm of classic NES light-gun games. The characters, scenes, sprite sheet, and music are original. The published game needs no build tools.
 
-**[Play Arcade Alley in your browser](https://dgutensohn03.github.io/arcade-alley/)** · Works with mouse or touch. On a phone, rotate to landscape for a larger playfield.
+**[Play Arcade Alley in your browser](https://dgutensohn03.github.io/arcade-alley/)** · Works with mouse or touch. Landscape is the intended phone orientation. Starting on a touch device opens an immersive play view; browsers that support native fullscreen and orientation lock use them, while others keep the game within the viewport and show a rotate prompt.
 
 ## Play
 
@@ -14,12 +14,13 @@ Open `index.html` in a current desktop or mobile browser, or serve the folder wi
 - Complete 12 waves across four districts. Every fourth wave is a bonus round. Three strikes end the run. The best score is stored in your browser.
 - The four districts introduce the Strongman, Oligarch, Propagandist, and Algorithm. Civilians include a journalist, commuter, musician, delivery rider, tourist, and photographer. Each has distinct original pixel art.
 - Targets pop into view, idle in short pixel animation cycles, react to hits, and clear between sets. The skyline lights and title roster animate too.
+- Each district uses three fixed, numbered target lanes. Authored friend-or-foe formations change by wave and set, so the character placement reads as part of the scene.
 
 The aim assist starts on for the mouse. Turning it off hides the reticle until you fire, closer to the light-gun feel. A touchscreen remains direct touch targeting. The optional phone-as-a-separate-controller concept needs a paired sensor transport and calibration; this version does **not** claim that a phone's gyroscope accurately points at another display.
 
 ## GitHub Pages
 
-The public game URL is **https://dgutensohn03.github.io/arcade-alley/**. The [Pages deployment workflow](.github/workflows/deploy.yml) packages the four game files and publishes them automatically on every push to `main`. In **[Settings → Pages](https://github.com/dgutensohn03/arcade-alley/settings/pages)**, **GitHub Actions** is the recommended publishing source for this workflow. Check the **Deploy Arcade Alley** run under the **Actions** tab if a future update does not appear.
+The public game URL is **https://dgutensohn03.github.io/arcade-alley/**. The [Pages deployment workflow](.github/workflows/deploy.yml) packages the game files and sprite atlas and publishes them automatically on every push to `main`. In **[Settings → Pages](https://github.com/dgutensohn03/arcade-alley/settings/pages)**, **GitHub Actions** is the recommended publishing source for this workflow. Check the **Deploy Arcade Alley** run under the **Actions** tab if a future update does not appear.
 
 The site is static, uses relative file paths, and needs no secrets, build command, or server. The `.nojekyll` file tells Pages to serve these files directly.
 
@@ -29,7 +30,10 @@ The site is static, uses relative file paths, and needs no secrets, build comman
 - `styles.css` — responsive arcade cabinet presentation
 - `logic.js` — hit rules and scoring, also usable by Node tests
 - `game.js` — canvas art, animation, scenes, input, game state, and original Web Audio chiptune
+- `assets/sprites.png` and `assets/sprites.json` — transparent, four-frame pixel sprite atlas and frame map
+- `scripts/build-sprites.js` — rebuilds the atlas from the game artwork with Node.js and no packages
 - `tests/logic.test.js` — core gameplay rules
+- `tests/game-render.test.js` — start-screen and sprite-animation smoke check
 - `.github/workflows/check.yml` — runs the logic tests on each push and pull request
 - `.github/workflows/deploy.yml` — publishes the game to GitHub Pages on each push to `main`
 

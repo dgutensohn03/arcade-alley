@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#121421">
   <meta name="description" content="Arcade Alley: an original 8-bit arcade shooting gallery. Identify the threat, protect the bystander, and beat twelve waves.">
   <title>Arcade Alley · 8-bit arcade</title>
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
   <main class="cabinet">
@@ -14,6 +14,8 @@
     <div class="screen-shell">
       <canvas id="game" width="480" height="270" tabindex="0" aria-label="Arcade Alley game. Click or tap threats, avoid civilians. Press R to reload, P to pause, M to mute, C to toggle the crosshair."></canvas>
       <div class="scanlines" aria-hidden="true"></div>
+      <div class="touch-hud" aria-label="Mobile game controls"><button id="touch-reload" type="button" aria-label="Reload">↻</button><button id="touch-pause" type="button" aria-label="Pause or resume">Ⅱ</button><button id="touch-exit" type="button" aria-label="Exit immersive view">✕</button></div>
+      <div class="rotate-hint" aria-hidden="true">↻ ROTATE TO LANDSCAPE<br><small>FOR THE FULL ARCADE VIEW</small></div>
     </div>
     <div class="controlbar" aria-label="Game controls">
       <div class="buttons"><button id="start" type="button">START / RESTART</button><button id="reload" type="button">↻ RELOAD</button><button id="pause" type="button">Ⅱ PAUSE</button></div>
@@ -22,7 +24,7 @@
     <div class="instructions"><p><strong>IDENTIFY FIRST. SHOOT SECOND.</strong> Red markers flag threats; civilians carry cameras, phones, instruments, and deliveries. Reload between waves.</p><p>CLICK / TAP fire <span>·</span> R reload <span>·</span> P pause <span>·</span> C aim <span>·</span> M sound <span>·</span> Rotate your phone for a larger playfield.</p></div>
     <p class="sr-only" id="announcer" aria-live="polite"></p>
   </main>
-  <script src="logic.js?v=2"></script>
-  <script src="game.js?v=2"></script>
+  <script src="logic.js?v=3"></script>
+  <script src="game.js?v=3"></script>
 </body>
 </html>

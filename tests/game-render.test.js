@@ -35,9 +35,10 @@ test('title roster renders and targets visibly rise into a round',()=>{
   node('start').handlers.click();
   for(let i=1;i<39;i++)frame(i);
   const entering=frame(39),settled=(frame(40),frame(41),frame(42),frame(43));
-  assert.equal(entering.length,3);
+  assert.ok(entering.length>=2&&entering.length<3,'targets enter one lane at a time');
   assert.equal(settled.length,3);
-  assert.ok(entering.some((pair,i)=>pair[1]-settled[i][1]>15),'sprites should visibly rise into view');
+  assert.deepEqual(settled.map(pair=>pair[0]),[72,239,400],'targets use the marked training lanes');
+  assert.ok(entering.some(pair=>settled.some(end=>end[0]===pair[0]&&pair[1]-end[1]>15)),'sprites should visibly rise into view');
   frame(44);const active=frame(45);
   const [x,y]=active[0];
   node('game').handlers.pointerdown({preventDefault(){},clientX:x,clientY:y-20,pointerType:'touch'});
